@@ -48,3 +48,12 @@ curl -s "https://get.sdkman.io" | bash
 ```bash
 sdk install java maven tomcat quarkus
 ```
+
+## Arch specifics
+- Yay Package Manager
+```bash
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
