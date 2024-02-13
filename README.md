@@ -38,3 +38,13 @@ Copy the contents of [the base ~/.zshrc file](./.zshrc)
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
+
+## SDKMan! (Java)
+- Install
+```bash
+curl -s "https://get.sdkman.io" | bash
+```
+- Install Java
+```bash
+sdk install java maven tomcat quarkus
+```
