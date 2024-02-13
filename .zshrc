@@ -36,8 +36,8 @@ export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
-export PATH="/home/nicolasboyer/.sdkman/candidates/java/current/bin/java:$PATH"
-export JAVA_HOME=/home/nicolasboyer/.sdkman/candidates/java/current/bin/java
+export PATH="$HOME/.sdkman/candidates/java/current/bin/java:$PATH"
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current/bin/java
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias tomcat="$HOME/.sdkman/candidates/tomcat/current/bin/catalina.sh"
