@@ -32,3 +32,9 @@ plugins=(
 
 ## ZSH rc
 Copy the contents of [the base ~/.zshrc file](./.zshrc)
+
+## NVM (Node.js)
+- Install
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
