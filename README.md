@@ -16,6 +16,11 @@ sudo dnf install -y git zsh zip unzip
 sudo pacman -Syu git zsh zip unzip openssh
 ```
 
+## OMZ
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## ZSH Autosuggestions
 - Install
 ```bash
