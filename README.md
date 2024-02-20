@@ -41,7 +41,17 @@ Copy the contents of [the base ~/.zshrc file](./.zshrc)
 ## NVM (Node.js)
 - Install
 ```bash
+# Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# Install Node.js LTS
+nvm install --lts
+
+# Use Node.js LTS
+nvm use --lts
+
+# Install pnpm
+npm i -g pnpm
 ```
 
 ## SDKMan! (Java)
