@@ -3,17 +3,17 @@
 ## ZSH
 - Debian
 ```bash
-sudo apt install -y git zsh zip unzip
+sudo apt install -y git zsh zip unzip micro
 ```
 
 - Fedora
 ```bash
-sudo dnf install -y git zsh zip unzip
+sudo dnf install -y git zsh zip unzip micro
 ```
 
 - Arch
 ```bash
-sudo pacman -Syu git zsh zip unzip openssh
+sudo pacman -Syu git zsh zip unzip openssh micro
 ```
 
 ## OMZ
