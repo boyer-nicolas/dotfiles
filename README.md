@@ -51,7 +51,10 @@ curl -s "https://get.sdkman.io" | bash
 ```
 - Install Java
 ```bash
-sdk install java maven tomcat quarkus
+sdk install java
+sdk install maven
+sdk install tomcat
+sdk install quarkus
 ```
 
 ## Arch specifics
