@@ -36,11 +36,11 @@ export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
+export PATH="$HOME/.sdkman/candidates/java/current/bin/java:$PATH"
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current/bin/java
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export JAVA_HOME="$SDKMAN_DIR/candidates/java/current/bin/java"
-export PATH="$JAVA_HOME:$PATH"
-alias tomcat="$SDKMAN_DIR/candidates/tomcat/current/bin/catalina.sh"
+alias tomcat="$HOME/.sdkman/candidates/tomcat/current/bin/catalina.sh"
 
 # System Preferences
 export EDITOR="micro"
