@@ -1,7 +1,7 @@
-# Starship Terminal
+# Oh My Zsh
 eval "$(starship init zsh)"
 
-# Ignore Case when autocompleting
+# Ignore case when autocompleting
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
@@ -47,3 +47,4 @@ alias tomcat="$HOME/.sdkman/candidates/tomcat/current/bin/catalina.sh"
 export EDITOR="micro"
 alias ccache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
