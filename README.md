@@ -16,23 +16,19 @@ sudo dnf install -y git zsh zip unzip micro
 sudo pacman -Syu git zsh zip unzip openssh micro
 ```
 
-## OMZ
+## Starship Terminal
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -sS https://starship.rs/install.sh | sh
 ```
 
 ## ZSH Autosuggestions
-- Install
 ```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 ```
 
-- Add to ~/.zshrc
+## ZSH Syntax Highlighting
 ```bash
-plugins=( 
-    # other plugins...
-    zsh-autosuggestions
-)
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 ```
 
 ## ZSH rc
