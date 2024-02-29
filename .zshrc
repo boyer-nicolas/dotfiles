@@ -1,8 +1,9 @@
-# Oh My Zsh
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="gnzh"
-plugins=(git zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh
+# Starship Terminal
+eval "$(starship init zsh)"
+
+# Ignore Case when autocompleting
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Docker Aliases
 alias dc="docker compose"
@@ -45,3 +46,4 @@ alias tomcat="$HOME/.sdkman/candidates/tomcat/current/bin/catalina.sh"
 # System Preferences
 export EDITOR="micro"
 alias ccache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
