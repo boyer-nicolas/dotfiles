@@ -48,3 +48,7 @@ export EDITOR="micro"
 alias ccache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Terraform
+alias terraform="tofu"
+alias tofy="tofu"
