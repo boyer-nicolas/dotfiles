@@ -47,7 +47,7 @@ nvm install --lts
 nvm use --lts
 
 # Install pnpm
-npm i -g pnpm @go-task/cli
+npm i -g pnpm
 ```
 
 ## SDKMan! (Java)
