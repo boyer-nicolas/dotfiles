@@ -21,6 +21,7 @@ alias rmdir="sudo rm -rf"
 alias ls="ls -llah"
 alias gimme="sudo chown -R $USER:$USER"
 alias gc="git checkout"
+alias please="echo 'Of course.' && sudo"
 
 # Python Aliases
 alias pip="pip3"
@@ -30,6 +31,7 @@ alias py="python3"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias npm="pnpm"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
@@ -52,3 +54,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Terraform
 alias terraform="tofu"
 alias tofy="tofu"
+
+# Postgres
+alias quickpg="docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD="postgres" -e POSTGRES_USER="postgres" -e POSTGRES_DB="postgres" postgres:16"
