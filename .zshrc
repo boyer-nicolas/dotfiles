@@ -18,7 +18,7 @@ alias gno="git add . && git commit --no-verify && git push"
 
 # Filesystem Aliases
 alias rmdir="sudo rm -rf"
-alias ls="ls -llah"
+alias ls="ls -al --color"
 alias gimme="sudo chown -R $USER:$USER"
 alias gc="git checkout"
 alias please="echo 'Of course.' && sudo"
@@ -29,8 +29,8 @@ alias py="python3"
 
 # Node.js
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 alias npm="pnpm"
 alias npx="pnpm dlx"
 
@@ -61,3 +61,11 @@ alias quickpg="docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD="postgres" -e P
 
 # SMTP
 alias quicksmtp="docker run --rm -p 1080:1080 -p 1025:1025 maildev/maildev"
+
+# pnpm
+export PNPM_HOME="/Users/nicolasboyer/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
