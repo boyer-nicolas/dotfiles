@@ -31,9 +31,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 ```
 
-## ZSH rc
-Copy the contents of [the base ~/.zshrc file](./.zshrc)
-
 ## NVM (Node.js)
 - Install
 ```bash
@@ -71,3 +68,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+
+## ZSH rc
+Copy the contents of [the base ~/.zshrc file](./.zshrc)
