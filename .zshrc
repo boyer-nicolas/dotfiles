@@ -1,5 +1,11 @@
 # Oh My Zsh
-eval "$(starship init zsh)"
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="gnzh"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 # Ignore case when autocompleting
 autoload -Uz compinit && compinit
