@@ -16,9 +16,9 @@ sudo dnf install -y git zsh zip unzip micro
 sudo pacman -Syu git zsh zip unzip openssh micro
 ```
 
-## Starship Terminal
+## OMZ
 ```bash
-curl -sS https://starship.rs/install.sh | sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## ZSH Autosuggestions
