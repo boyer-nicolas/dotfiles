@@ -69,7 +69,7 @@ alias quickpg="docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD="postgres" -e P
 alias quicksmtp="docker run --rm -p 1080:1080 -p 1025:1025 maildev/maildev"
 
 # pnpm
-export PNPM_HOME="/Users/nicolasboyer/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
