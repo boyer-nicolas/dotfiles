@@ -24,7 +24,7 @@ alias gno="git add . && git commit --no-verify && git push"
 
 # Filesystem Aliases
 alias rmdir="sudo rm -rf"
-alias ls="ls -al --color"
+alias ls="ls -llah --color=auto"
 alias gimme="sudo chown -R $USER:$USER"
 alias gc="git checkout"
 alias please="echo 'Of course.' && sudo"
