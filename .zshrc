@@ -59,8 +59,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Terraform
-alias terraform="tofu"
-alias tofy="tofu"
+alias terraform='docker run --user $(id -u):$(id -g) --rm -v $(pwd):/data -w /data -t hashicorp/terraform:1.5.7'
+alias tf="terraform"
+alias tflint="docker run --rm -v $(pwd):/data -t ghcr.io/terraform-linters/tflint"
 
 # Postgres
 alias quickpg="docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD="postgres" -e POSTGRES_USER="postgres" -e POSTGRES_DB="postgres" postgres:16"
