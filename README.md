@@ -16,6 +16,12 @@ sudo dnf install -y git zsh zip unzip micro
 sudo pacman -Syu git zsh zip unzip openssh micro
 ```
 
+## MacOS
+```zsh
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 ## OMZ
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
