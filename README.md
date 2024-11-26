@@ -16,15 +16,19 @@ sudo dnf install -y git zsh zip unzip micro
 sudo pacman -Syu git zsh zip unzip openssh micro
 ```
 
-## MacOS
+## HomeBrew
 ```zsh
-# Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## OMZ
+## Micro
+```zsh
+brew install micro
+```
+
+## OMP
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
 ```
 
 ## ZSH Autosuggestions
@@ -67,7 +71,7 @@ sdk install quarkus
 ```
 
 ## Arch specifics
-- Yay Package Manager
+### Yay Package Manager
 ```bash
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
