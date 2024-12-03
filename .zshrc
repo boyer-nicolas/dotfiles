@@ -68,9 +68,7 @@ alias quickpg="docker run --rm \
 postgres:16"
 
 # SMTP
-alias quicksmtp="docker run -d \
---restart unless-stopped \
---name=mailpit \
+alias quicksmtp="docker run --rm \
 -p 8025:8025 \
 -p 1025:1025 \
 axllent/mailpit"
