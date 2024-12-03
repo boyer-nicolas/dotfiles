@@ -60,7 +60,17 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias tf="terraform"
 
 # Postgres
-alias quickpg="docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD="postgres" -e POSTGRES_USER="postgres" -e POSTGRES_DB="postgres" postgres:16"
+alias quickpg="docker run --rm \
+-p 5432:5432 \
+-e POSTGRES_PASSWORD="postgres" \
+-e POSTGRES_USER="postgres" \
+-e POSTGRES_DB="postgres" \
+postgres:16"
 
 # SMTP
-alias quicksmtp="docker run --rm -p 1080:1080 -p 1025:1025 maildev/maildev"
+alias quicksmtp="docker run -d \
+--restart unless-stopped \
+--name=mailpit \
+-p 8025:8025 \
+-p 1025:1025 \
+axllent/mailpit"
