@@ -20,12 +20,20 @@ alias gc="git checkout"
 alias please="echo 'Of course.' && sudo"
 
 # Node.js
-echo "Loading nvm..."
+echo -n "Loading nvm, "
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 if [ -f "$NVM_DIR/bash_completion" ]; then
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 fi
+
+echo -n "pnpm, "
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 alias npm="echo 'Did you mean @?'"
 alias npx="pnpm exec"
@@ -33,7 +41,7 @@ alias bun="echo 'Did you mean pnpm?'"
 alias yarn="echo 'Did you mean pnpm?'"
 
 # Python
-echo "Loading pyenv..."
+echo "pyenv."
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -56,11 +64,3 @@ alias quickpg="docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD="postgres" -e P
 
 # SMTP
 alias quicksmtp="docker run --rm -p 1080:1080 -p 1025:1025 maildev/maildev"
-
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
