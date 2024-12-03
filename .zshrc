@@ -1,15 +1,5 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/nicolasboyer/completions:"* ]]; then export FPATH="/Users/nicolasboyer/completions:$FPATH"; fi
-# Oh My Posh
-eval "$(oh-my-posh init zsh --config ~/mytheme.omp.json)"
-
-# Ignore case when autocompleting
-fpath=(~/.zsh $fpath)
-autoload -Uz compinit
-compinit -u
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-# alias docker="podman"
+# Starship
+eval "$(starship init zsh)"
 
 # Docker Aliases
 alias dc="docker compose"
@@ -29,18 +19,64 @@ alias gimme="chown -R $USER:$USER"
 alias gc="git checkout"
 alias please="echo 'Of course.' && sudo"
 
-# Python Aliases
-alias pip="pip3"
-alias py="python3"
-
 # Node.js
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-alias npm="echo 'Did you mean pnpm?'"
+# Lazy-loading nvm + npm on node globals call
+lazynvm() {
+    unset -f nvm node npm npx
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+    if [ -f "$NVM_DIR/bash_completion" ]; then
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+    fi
+}
+
+nvm() {
+    lazynvm
+    nvm $@
+}
+
+node() {
+    lazynvm
+    node $@
+}
+
+npm() {
+    lazynvm
+    npm $@
+}
+
+npx() {
+    lazynvm
+    npx $@
+}
+
+pnpm() {
+    lazynvm
+    pnpm $@
+}
+
+alias npm="echo 'Did you mean @?'"
 alias npx="pnpm exec"
 alias bun="echo 'Did you mean pnpm?'"
 alias yarn="echo 'Did you mean pnpm?'"
+
+# Python
+lazypython() {
+    unset -f python pip
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+}
+
+python() {
+    lazypython
+    python $@
+}
+
+pip() {
+    lazypython
+    pip $@
+}
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
@@ -69,18 +105,11 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-export DOCKER_BUILDKIT=1
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/nicolasboyer/Dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nicolasboyer/Dev/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/nicolasboyer/Dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nicolasboyer/Dev/google-cloud-sdk/completion.zsh.inc'; fi
 
-export PATH="/Users/nicolasboyer/.local/bin:$PATH"
-
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
+. "/Users/nicolasboyer/.deno/env"
