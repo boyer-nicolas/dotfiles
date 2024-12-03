@@ -20,40 +20,12 @@ alias gc="git checkout"
 alias please="echo 'Of course.' && sudo"
 
 # Node.js
-# Lazy-loading nvm + npm on node globals call
-lazynvm() {
-    unset -f nvm node npm npx
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-    if [ -f "$NVM_DIR/bash_completion" ]; then
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-    fi
-}
-
-nvm() {
-    lazynvm
-    nvm $@
-}
-
-node() {
-    lazynvm
-    node $@
-}
-
-npm() {
-    lazynvm
-    npm $@
-}
-
-npx() {
-    lazynvm
-    npx $@
-}
-
-pnpm() {
-    lazynvm
-    pnpm $@
-}
+echo "Loading nvm..."
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+if [ -f "$NVM_DIR/bash_completion" ]; then
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+fi
 
 alias npm="echo 'Did you mean @?'"
 alias npx="pnpm exec"
@@ -61,22 +33,10 @@ alias bun="echo 'Did you mean pnpm?'"
 alias yarn="echo 'Did you mean pnpm?'"
 
 # Python
-lazypython() {
-    unset -f python pip
-    export PYENV_ROOT="$HOME/.pyenv"
-    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-}
-
-python() {
-    lazypython
-    python $@
-}
-
-pip() {
-    lazypython
-    pip $@
-}
+echo "Loading pyenv..."
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
@@ -104,12 +64,3 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/nicolasboyer/Dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nicolasboyer/Dev/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/nicolasboyer/Dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nicolasboyer/Dev/google-cloud-sdk/completion.zsh.inc'; fi
-
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
-. "/Users/nicolasboyer/.deno/env"
