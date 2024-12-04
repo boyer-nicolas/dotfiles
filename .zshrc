@@ -25,15 +25,6 @@ alias gimme="chown -R $USER:$USER"
 alias gc="git checkout"
 alias please="echo 'Of course.' && sudo"
 
-# Node.js
-echo -n "Loading nvm, "
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-if [ -f "$NVM_DIR/bash_completion" ]; then
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-fi
-
-echo -n "pnpm, "
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
 *":$PNPM_HOME:"*) ;;
@@ -45,12 +36,13 @@ alias npm="echo 'Did you mean @?'"
 alias npx="pnpm exec"
 alias bun="echo 'Did you mean pnpm?'"
 alias yarn="echo 'Did you mean pnpm?'"
+alias nvm="echo 'Did you mean fnm?'"
 
 # Python
-echo "pyenv."
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# echo "pyenv."
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
@@ -78,3 +70,10 @@ alias quicksmtp="docker run --rm \
 -p 8025:8025 \
 -p 1025:1025 \
 axllent/mailpit"
+
+# fnm
+FNM_PATH="/Users/nicolasboyer/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+    export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
+    eval "$(fnm env)"
+fi
