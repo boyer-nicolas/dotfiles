@@ -1,6 +1,12 @@
 # Starship
 eval "$(starship init zsh)"
 
+# Ignore case when autocompleting
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # Docker Aliases
 alias dc="docker compose"
 alias du="dc up --remove-orphans"
