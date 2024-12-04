@@ -77,3 +77,5 @@ if [ -d "$FNM_PATH" ]; then
     export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
     eval "$(fnm env)"
 fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
