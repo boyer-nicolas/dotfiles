@@ -28,17 +28,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 ```
 
-## NVM (Node.js)
+## FNM (Node.js)
 - Install
 ```bash
-# Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
+# Install FNM
+curl -fsSL https://fnm.vercel.app/install | bash
 # Install Node.js LTS
-nvm install --lts
+fnm install --lts
 
 # Use Node.js LTS
-nvm use --lts
+fnm use lts-latest
 
 # Install pnpm
 npm i -g pnpm
