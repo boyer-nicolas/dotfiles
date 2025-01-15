@@ -32,17 +32,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-alias npm="echo 'Did you mean @?'"
+alias npm="echo 'Did you mean pnpm '"
 alias npx="pnpm exec"
-alias bun="echo 'Did you mean pnpm?'"
-alias yarn="echo 'Did you mean pnpm?'"
-alias nvm="echo 'Did you mean fnm?'"
-
-# Python
-# echo "pyenv."
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
+alias yarn="echo 'Did you mean pnpm '"
+alias nvm="echo 'Did you mean fnm '"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
