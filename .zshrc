@@ -70,26 +70,26 @@ alias quicksmtp="docker run --rm \
 axllent/mailpit"
 
 # fnm
-FNM_PATH="/Users/nicolasboyer/Library/Application Support/fnm"
+FNM_PATH="${HOME}/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
+  export PATH="${HOME}/Library/Application Support/fnm:$PATH"
   eval "$(fnm env)"
 fi
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 # fnm
-FNM_PATH="/Users/nicolasboyer/Library/Application Support/fnm"
+FNM_PATH="${HOME}/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
+  export PATH="${HOME}/Library/Application Support/fnm:$PATH"
   eval "$(fnm env)"
 fi
 
 # bun completions
-[ -s "/Users/nicolasboyer/.bun/_bun" ] && source "/Users/nicolasboyer/.bun/_bun"
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2025-01-15 16:18:17
-export PATH="$PATH:/Users/nicolasboyer/.local/bin"
+export PATH="$PATH:${HOME}/.local/bin"
