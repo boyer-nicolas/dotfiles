@@ -37,6 +37,11 @@ alias npx="pnpm exec"
 alias yarn="echo 'Did you mean pnpm '"
 alias nvm="echo 'Did you mean fnm '"
 
+# Python
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/go"
@@ -67,8 +72,24 @@ axllent/mailpit"
 # fnm
 FNM_PATH="/Users/nicolasboyer/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
-    export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
-    eval "$(fnm env)"
+  export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
+  eval "$(fnm env)"
 fi
 
 eval "$(fnm env --use-on-cd --shell zsh)"
+# fnm
+FNM_PATH="/Users/nicolasboyer/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/nicolasboyer/Library/Application Support/fnm:$PATH"
+  eval "$(fnm env)"
+fi
+
+# bun completions
+[ -s "/Users/nicolasboyer/.bun/_bun" ] && source "/Users/nicolasboyer/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Created by `pipx` on 2025-01-15 16:18:17
+export PATH="$PATH:/Users/nicolasboyer/.local/bin"
