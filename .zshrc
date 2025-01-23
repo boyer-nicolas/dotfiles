@@ -93,3 +93,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2025-01-15 16:18:17
 export PATH="$PATH:${HOME}/.local/bin"
+
+export LANG=en_US.UTF-8
