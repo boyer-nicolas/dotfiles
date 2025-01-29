@@ -16,7 +16,7 @@ alias ddown="dc down -v --remove-orphans"
 # Git Aliases
 alias gs="git status"
 alias g="git add . && git commit && git push"
-alias gno="git add . && git commit --no-verify && git push"
+alias gno="git add . && git commit && git push"
 
 # Filesystem Aliases
 alias rmdir="rm -rf"
@@ -31,11 +31,6 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-alias npm="echo 'Did you mean pnpm '"
-alias npx="pnpm exec"
-alias yarn="echo 'Did you mean pnpm '"
-alias nvm="echo 'Did you mean fnm '"
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
@@ -70,19 +65,7 @@ alias quicksmtp="docker run --rm \
 axllent/mailpit"
 
 # fnm
-FNM_PATH="${HOME}/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="${HOME}/Library/Application Support/fnm:$PATH"
-  eval "$(fnm env)"
-fi
-
 eval "$(fnm env --use-on-cd --shell zsh)"
-# fnm
-FNM_PATH="${HOME}/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="${HOME}/Library/Application Support/fnm:$PATH"
-  eval "$(fnm env)"
-fi
 
 # bun completions
 [ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
@@ -95,3 +78,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:${HOME}/.local/bin"
 
 export LANG=en_US.UTF-8
+
+export PATH="/opt/homebrew/bin:$PATH"
