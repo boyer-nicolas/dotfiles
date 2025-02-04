@@ -32,6 +32,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+if command -v pnpm 2>&1 >/dev/null; then
+    alias npm="pnpm"
+fi
+
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
